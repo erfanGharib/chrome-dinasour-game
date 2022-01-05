@@ -1,0 +1,170 @@
+@font-face {
+    font-family: PressStart2P-vaV7;
+    src: url(../assets/font/PressStart2P-vaV7.ttf);
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@keyframes opacity {100% {opacity: 0;}}
+@keyframes upDown {1% {bottom: 2rem;}}
+
+main {
+    width: 50%;
+    height: 300px;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    width: 100%;
+    background: #fafafa; 
+    font-family: PressStart2P-vaV7;
+    color: #555;
+    transition: ease .7s;
+    position: relative;
+}
+
+#scores {
+    position: relative;
+    bottom: 14em;
+    left: 37em;
+    z-index: 2;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 150px;
+}
+.score-opacity {
+    animation: .3s ease 0s infinite forwards alternate opacity;
+}
+
+#game-over {
+    z-index: 3;
+    height:75px;
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+#reload-btn {
+    cursor: pointer;
+    width: 51px;
+    height: 42px;
+    background: url(../assets/icons/reload-btn.svg) 100% no-repeat;
+}
+
+.T-rex {
+    position: relative;
+    top: 5px;
+    left: 27px;
+    z-index: 2;
+}
+.trex {
+    animation: .8s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s 1 alternate goUp;
+}
+.addAnimate {
+    animation: .17s .1s infinite reverse upDown;
+}
+.foot.one {
+    position: relative;
+    left: 17px;
+    bottom: 1.5rem;
+}
+.foot.two {
+    position: relative;
+    left: 5px;
+    bottom: 1.5rem;
+    animation-delay: .17s;
+}
+
+#frame {
+    display: flex;
+    width: 120px;
+    height: 250px;
+    align-items: flex-end;
+    justify-content: flex-start;
+    overflow: hidden;
+    transition: linear .5s;
+    margin: auto 0;
+    position: relative;
+    bottom: 20px;
+}
+#canvas {
+    min-width: 3800px;
+    height: 150px;
+    position: relative;
+}
+
+#path {
+    background-image: url(../assets/image/path.svg);
+    background-size: cover;
+    min-width: 3600px;
+    height: 30.5px;
+    position: relative;
+    left: -210px;
+    display: flex;
+    justify-content: flex-end;
+    transition: ease .2s;
+    top: 20px;
+}
+.path {
+    animation: 7s linear 1s infinite forwards goLeft;
+}
+
+#cactus-father {
+    width: 60%;
+    height: 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 20px;
+}
+.cactus-child.one {
+    background: url(../assets/image/cactus-1.svg);
+    background-size: 100%;
+    width: 35px;
+    height: 100%;
+    left: 5px;
+    position: relative;
+}
+.cactus-child.two {
+    background: url(../assets/image/cactus-2.svg);
+    background-size: 100%;
+    width: 59px;
+    height: 100%;
+    position: relative;
+    left: 4px;
+}
+.cactus-child.three {
+    background: url(../assets/image/cactus-3.svg) no-repeat;
+    background-size: 100%;
+    width: 80px;
+    height: 90%;
+    margin-top: 10px;
+    left: -8px;
+    position: relative;
+}
+.cactus-child.four {
+    background: url(../assets/image/cactus-1.svg);
+    background-size: 100%;
+    width: 35px;
+    height: 100%;
+}
+
+#cloud {
+    position: relative;
+    height: 100px;
+    min-width: 2000px;
+    display: flex;
+    margin-left: 200px;
+    left: -210px;
+}
+.cloud {
+    animation: 22s linear 1s infinite both goLeft;
+}
